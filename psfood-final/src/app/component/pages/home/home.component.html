@@ -1,0 +1,360 @@
+<app-header></app-header>
+<!--Home page starts-->
+<section class="home">
+  <img src="../../assets/food.png" height="555" width="1265">
+
+  <div class="homecontent">
+      <h1>Count the memories,<br>Not the Calories</h1>
+      <a routerLink="/menu" class="btn btn-lg btn-light">Explore Menu</a> &nbsp;
+  </div>
+</section>
+<!--Home page Ends-->
+
+
+<!-- offer section -->
+
+<section class="offer_section layout_padding-bottom">
+  <div class="offer_container">
+    <div class="container ">
+      <div class="row">
+        <div class="col-md-6  ">
+          <div class="box ">
+            <div class="img-box">
+              <img src="../../assets/food plate (1).jpg" alt="offer1">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Tasty Thursdays
+              </h5>
+              <h6>
+                <span>15%</span> Off
+              </h6>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6  ">
+          <div class="box ">
+            <div class="img-box">
+              <img src="../../assets/rms o2.jpg" alt="offer2">
+            </div>
+            <div class="detail-box">
+              <h5>
+                Fun Fridays
+              </h5>
+              <h6>
+                <span>20%</span> Off
+              </h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- end offer section -->
+
+
+
+<app-search></app-search>
+<app-tags></app-tags>
+
+
+<ul>
+  <li *ngFor="let food of foods">
+    <a routerLink="/food/{{food.id}}">
+      <img [src]="food.imageUrl" [alt]="food.name" />
+      <div class="content">
+        <div class="name">
+          {{food.name}}
+        </div>
+
+
+
+        <div class="product-item-footer">
+          <div class="origins">
+            <span *ngFor="let origin of food.origins">
+              {{origin}}
+            </span>
+          </div>
+
+          <div class="cook-time">
+            <span>🕒</span>
+            {{food.cookTime}}
+          </div>
+        </div>
+
+        <div class="price">
+          <span>
+            {{food.price | currency}}
+          </span>
+        </div>
+      </div>
+    </a>
+  </li>
+</ul>
+
+<!-- about section -->
+
+<section class="about_section layout_padding">
+  <div class="container  ">
+
+    <div class="row">
+      <div class="col-md-6 ">
+        <div class="img-box">
+          <img src="../../assets/aboutBox.png" alt="">
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="detail-box">
+          <div class="heading_container">
+            <h2>
+              About Us
+            </h2>
+          </div>
+          <p>
+            PS Foods believes in preparing great food with quality and taste. We believe in the happiness that our customers experience with our food. We believe in health that our food provides to our customers. We believe in the affordability our lunch box provide. We go an extra mile to ensure hygienic use of lunch boxes.Cleanliness quality and hygiene are the mantra for us. We are PS Foods for you
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- end about section -->
+
+
+
+
+<section class="book_section layout_padding">
+  <div class="container">
+    <div class="heading_container">
+      <h2>Book A Event</h2>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form_container">
+          <form (ngSubmit)="bookEvent()">
+            <div class="mb-3">
+              <input type="text" class="form-control" placeholder="Your Name" [(ngModel)]="name" name="name" required (input)="checkName()">
+              <div class="alert" *ngIf="nameError">{{ nameError }}</div>
+            </div>
+            <div class="mb-3">
+              <input type="text" class="form-control" placeholder="Phone Number" [(ngModel)]="phoneNumber" name="phoneNumber" required (input)="onPhoneNumberChange()">
+              <div class="alert" *ngIf="phoneError">{{ phoneError }}</div>
+            </div>
+            <div class="mb-3">
+              <input type="email" class="form-control" placeholder="Your Email" [(ngModel)]="email" name="email" required>
+              <div class="alert" *ngIf="emailError">{{ emailError }}</div>
+            </div>
+            <div class="mb-3">
+              <select class="form-control nice-select wide" [(ngModel)]="persons" name="persons" required>
+                <option value="null" disabled selected>How many persons?</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+              </select>
+              <div class="alert" *ngIf="personsError">{{ personsError }}</div>
+            </div>
+            <div class="mb-3">
+              <input type="date" class="form-control" [(ngModel)]="date" name="date" required (change)="checkDate()">
+              <div class="alert" *ngIf="dateError">{{ dateError }}</div>
+            </div>
+            <div class="btn_box">
+              <button type="submit" class="book_now_btn" style="border: 1px solid #000000;">Book Now</button>
+            </div>
+          </form>
+          <!-- Confirmation message -->
+          <div *ngIf="submissionSuccess" class="success-message">
+            <p>Your event has been successfully submitted.</p>
+          </div>
+
+          <!-- Error message -->
+          <div *ngIf="errorMessage" class="error-message" style="color: red;">
+            <p>{{ errorMessage }}</p>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="map_container">
+          <div id="googleMap">
+            <iframe class="position-absolute w-100 h-100" style="object-fit: cover;"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.449400544041!2d77.60781487368999!3d12.8787988169089!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae6bda3d013719%3A0xa97f4e02b8a49f54!2sEiTechOne!5e0!3m2!1sen!2sin!4v1702079543936!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end book section -->
+
+
+<!-- client section -->
+<section class="client_section layout_padding">
+  <div class="container">
+    <div class="heading_container heading_center">
+      <h2>
+        Testimonials
+      </h2>
+    </div>
+  </div>
+  <div id="customCarousel2" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-10 mx-auto">
+              <div class="box">
+                <div class="img-box">
+                  <img src="../../assets/teena%201.jpeg" alt="">
+                </div>
+                <div class="detail-box">
+                  <div class="client_info">
+                    <div class="client_name">
+                      <h5>
+                        Teena
+                      </h5>
+                    </div>
+                    <i class="fa fa-quote-left" aria-hidden="true"></i>
+                  </div>
+                  <p>
+                    Budget friendly lunch with yummy varieties and not the same boring lunch everyday.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-10 mx-auto">
+              <div class="box">
+                <div class="img-box">
+                  <img src="../../assets/jack%201.jpg" alt="">
+                </div>
+                <div class="detail-box">
+                  <div class="client_info">
+                    <div class="client_name">
+                      <h5>
+                        Jack
+                      </h5>
+                    </div>
+                    <i class="fa fa-quote-left" aria-hidden="true"></i>
+                  </div>
+                  <p>
+                    I just love the  taste of this lunch box. The food quality and hygiene are really commendable.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-10 mx-auto">
+              <div class="box">
+                <div class="img-box">
+                  <img src="../../assets/john%201.jpg" alt="">
+                </div>
+                <div class="detail-box">
+                  <div class="client_info">
+                    <div class="client_name">
+                      <h5>
+                        John
+                      </h5>
+                    </div>
+                    <i class="fa fa-quote-left" aria-hidden="true"></i>
+                  </div>
+                  <p>
+                    I cant wait for my lunch box daily. Super food,  great taste and best, it does not pinch my pocket.
+
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <ol class="carousel-indicators">
+      <li data-target="#customCarousel2" data-slide-to="0" class="active"></li>
+      <li data-target="#customCarousel2" data-slide-to="1"></li>
+      <li data-target="#customCarousel2" data-slide-to="2"></li>
+    </ol>
+  </div>
+</section>
+<!-- end client section -->
+
+
+<!-- footer section -->
+<footer class="footer_section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 footer-col">
+        <div class="footer_contact">
+          <h4>
+            Contact Us
+          </h4>
+          <div class="contact_link_box">
+            <a href="">
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              <span>
+                  First Floor, No.14, 150, 1 Anugraha
+                  Avani Shringeri Nagar,
+                  BTM 6th Stage, Bengaluru, Karnataka 560076
+                </span>
+            </a>
+            <a href="">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              <span>
+                  Call +91 9876543210
+                </span>
+            </a>
+            <a href="">
+              <i class="fa fa-envelope" aria-hidden="true"></i>
+              <span>
+                  psfoods&#64;gmail.com
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 footer-col">
+        <div class="footer_detail">
+          <a href="" class="footer-logo">
+            PS Foods
+          </a>
+          <p>
+            PS Foods believes in preparing great food with quality and taste. We believe in the happiness that our customers experience with our food.
+          </p>
+
+        </div>
+      </div>
+      <div class="col-md-4 footer-col">
+        <h4>
+          Opening Hours
+        </h4>
+        <p>
+          Everyday
+        </p>
+        <p>
+          10.00 Am -10.00 Pm
+        </p>
+      </div>
+    </div>
+    <div class="footer-info">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By
+        <a href="https://html.design/">PS Foods</a><br><br>
+      </p>
+    </div>
+  </div>
+</footer>
+<!-- footer section -->

@@ -1,0 +1,347 @@
+/*.joinnow*/
+/*{*/
+/*    padding: 10px;*/
+/*    color:#000000;*/
+/*    font-weight: bold;*/
+/*}*/
+/*.login*/
+/*{*/
+/*    background-color: #ffffff;*/
+/*    padding: 20px 30px;*/
+/*}*/
+
+/*@media screen and (max-width:600px)*/
+/*{*/
+
+/*    .joinnow*/
+/*{*/
+/*    padding: 5px;*/
+/*}*/
+/*}*/
+
+
+
+
+
+
+/* Reset some default styles */
+/*body,*/
+/*h1,*/
+/*h2,*/
+/*h3,*/
+/*p,*/
+/*ul,*/
+/*ol {*/
+/*  margin: 0;*/
+/*  padding: 0;*/
+/*}*/
+
+/*body {*/
+/*  font-family: 'Arial', sans-serif;*/
+/*}*/
+
+/*.container {*/
+/*  width: 80%;*/
+/*  margin: 0 auto;*/
+/*}*/
+
+/*.section {*/
+/*  padding: 80px 0;*/
+/*}*/
+
+/*.section-heading {*/
+/*  margin-bottom: 30px;*/
+/*}*/
+
+/*.section-heading h2 {*/
+/*  font-size: 36px;*/
+/*  font-weight: bold;*/
+/*  color: #333;*/
+/*}*/
+
+/*.section-heading h3 {*/
+/*  font-size: 24px;*/
+/*  color: #ff6600;*/
+/*}*/
+
+/*.left-text-content p {*/
+/*  font-size: 16px;*/
+/*  color: #666;*/
+/*  line-height: 1.6;*/
+/*}*/
+
+/*.right-content {*/
+/*  text-align: center;*/
+/*}*/
+
+/*.right-content img {*/
+/*  max-width: 100%;*/
+/*  height: auto;*/
+/*}*/
+
+/*!* Footer Styles *!*/
+/*.footer_section {*/
+/*  background-color: #333;*/
+/*  color: #fff;*/
+/*  padding: 50px 0;*/
+/*}*/
+
+/*.footer_col {*/
+/*  margin-bottom: 30px;*/
+/*}*/
+
+/*.footer_contact,*/
+/*.footer_detail,*/
+/*.footer_info {*/
+/*  text-align: center;*/
+/*}*/
+
+/*.footer_contact a,*/
+/*.footer_detail a,*/
+/*.footer_info a {*/
+/*  color: #fff;*/
+/*  text-decoration: none;*/
+/*}*/
+
+/*.footer_logo {*/
+/*  font-size: 24px;*/
+/*  font-weight: bold;*/
+/*  color: #ff6600;*/
+/*}*/
+
+/*.footer_logo:hover {*/
+/*  color: #fff;*/
+/*}*/
+
+/*.footer_social a {*/
+/*  font-size: 20px;*/
+/*  margin-right: 15px;*/
+/*  color: #fff;*/
+/*}*/
+
+/*!* Responsive Styles *!*/
+/*@media (max-width: 767px) {*/
+/*  .section {*/
+/*    padding: 60px 0;*/
+/*  }*/
+
+/*  .container {*/
+/*    width: 90%;*/
+/*  }*/
+/*}*/
+
+/* Add your additional styles as needed */
+
+/* Reset some default styles */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+.section-heading {
+  margin-bottom: 30px;
+}
+
+.section-heading h2 {
+  font-size: 36px;
+  font-weight: bold;
+  color: #333;
+}
+
+.section-heading h3 {
+  font-size: 24px;
+  color: #ff6600;
+}
+
+.left-text-content p {
+  font-size: 16px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.right-content {
+  text-align: center;
+}
+
+.right-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+
+/* Responsive Styles */
+@media (max-width: 767px) {
+  .section {
+    padding: 60px 0;
+  }
+
+  .container {
+    width: 90%;
+  }
+}
+
+/* Additional Styles for About Us Section */
+#about {
+  background-color: #f9f9f9;
+}
+
+.left-text-content,
+.right-content {
+  padding: 20px;
+}
+
+.left-text-content {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.right-content {
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
+/* Add your additional styles as needed */
+
+.thumb{
+margin-top: 0px;
+}
+
+/* Add space between table and footer */
+.book_section {
+  margin-bottom: 70px; /* Adjust the value as needed */
+}
+
+/* Ensure the footer is at the bottom of the page */
+.footer_section {
+  margin-top: auto;
+}
+
+
+
+/* footer section*/
+.footer_section {
+  background-color: #222831;
+  color: #ffffff;
+  padding: 75px 0 40px 0;
+  text-align: center;
+}
+
+.footer_section h4 {
+  font-size: 28px;
+}
+
+.footer_section h4,
+.footer_section .footer-logo {
+  font-weight: 400;
+  margin-bottom: 20px;
+  font-family: none;
+}
+
+.footer_section p {
+  color: #dbdbdb;
+}
+
+.footer_section .footer-col {
+  margin-bottom: 30px;
+}
+
+.footer_section .footer_contact .contact_link_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.footer_section .footer_contact .contact_link_box a {
+  margin: 5px 0;
+  color: #ffffff;
+}
+
+.footer_section .footer_contact .contact_link_box a i {
+  margin-right: 5px;
+}
+
+.footer_section .footer_contact .contact_link_box a:hover {
+  color: #ffbe33;
+}
+
+.footer_section .footer-logo {
+  display: block;
+  font-weight: normal;
+  font-size: 38px;
+  line-height: 1;
+  color: #ffffff;
+}
+
+.footer_section .footer_social {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.footer_section .footer_social a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #222831;
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+  background-color: #ffffff;
+  border-radius: 100%;
+  margin: 0 2.5px;
+  font-size: 18px;
+}
+
+.footer_section .footer_social a:hover {
+  color: #ffbe33;
+}
+
+.footer_section .footer-info {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.footer_section .footer-info p {
+  color: #ffffff;
+  margin: 0;
+}
+
+.footer_section .footer-info p a {
+  color: inherit;
+}
